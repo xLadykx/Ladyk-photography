@@ -8,42 +8,38 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #333; }
 
-    /* NAV */
     nav {
       position: fixed;
-      top: 0; left: 0;
       width: 100%;
-      background: rgba(0,0,0,0.7);
-      color: white;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      z-index: 1000;
+      z-index: 100;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 12px;
       font-weight: bold;
     }
     nav a:hover {
       color: #f5a623;
     }
 
-    /* HERO SLIDESHOW */
     .hero {
-      position: relative;
       height: 100vh;
+      position: relative;
       overflow: hidden;
     }
     .hero img {
-      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
       opacity: 0;
-      transition: opacity 2s;
+      transition: opacity 2s ease-in-out;
     }
     .hero img.active {
       opacity: 1;
@@ -56,29 +52,33 @@
       text-align: center;
       color: white;
       background: rgba(0, 0, 0, 0.5);
-      padding: 20px 40px;
+      padding: 20px 30px;
       border-radius: 10px;
+      animation: fadeIn 3s ease-in-out;
     }
     .hero-text h1 {
       font-size: 3em;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
     section {
-      padding: 80px 20px;
+      padding: 90px 20px 60px;
       max-width: 1000px;
       margin: auto;
     }
-
     h2 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin-bottom: 20px;
       text-align: center;
     }
-
     .about p {
+      text-align: center;
       font-size: 1.2em;
       line-height: 1.6;
-      text-align: center;
     }
 
     .gallery {
@@ -99,20 +99,21 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      margin-top: 20px;
     }
     input, textarea {
-      padding: 10px;
+      padding: 12px;
       font-size: 1em;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
     }
     button {
       padding: 12px;
-      font-size: 1em;
       background: #f5a623;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 1em;
       cursor: pointer;
     }
 
@@ -124,7 +125,7 @@
     }
 
     .socials a {
-      margin: 0 10px;
+      margin: 0 8px;
       color: white;
       text-decoration: none;
       font-size: 1.4em;
@@ -147,22 +148,22 @@
   </nav>
 
   <div class="hero">
-    <img src="images/photo1.jpg" class="active" alt="">
-    <img src="images/photo2.jpg" alt="">
-    <img src="images/photo3.jpg" alt="">
+    <img src="images/photo1.jpg" class="active" alt="Hero Photo 1">
+    <img src="images/photo2.jpg" alt="Hero Photo 2">
+    <img src="images/photo3.jpg" alt="Hero Photo 3">
     <div class="hero-text">
       <h1>LadyKay Photography</h1>
-      <p>Moments Made Timeless</p>
+      <p>Capturing timeless stories through the lens</p>
     </div>
   </div>
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>I’m LadyKay — a storyteller with a lens. I capture love, laughter, life’s quiet beauty. Whether weddings, portraits, or pure emotion, my art is about presence and memory. Let’s create something unforgettable.</p>
+    <p>I’m LadyKay, a passionate photographer dedicated to capturing the magic of everyday moments. From heartfelt portraits to unforgettable weddings, I turn memories into works of art.</p>
   </section>
 
   <section id="gallery">
-    <h2>Featured Gallery</h2>
+    <h2>Gallery</h2>
     <div class="gallery">
       <img src="images/photo4.jpg" alt="">
       <img src="images/photo5.jpg" alt="">
@@ -174,10 +175,10 @@
   <section id="contact">
     <h2>Book a Session</h2>
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Tell me what you’re looking for..."></textarea>
-      <button type="submit">Send Inquiry</button>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="What kind of shoot are you after?"></textarea>
+      <button type="submit">Send</button>
     </form>
   </section>
 
